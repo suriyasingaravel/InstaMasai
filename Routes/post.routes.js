@@ -33,7 +33,7 @@ postRouter.get("/", async(req,res)=>{
         const sortOrder = req.query.sortOrder || "asc";
 
        const posts=await PostModel.find({name:req.body.name});
-       res.status(200).send({"Posts":posts})
+       res.status(200).send({"msg":"New post added successfully","Posts":posts})
     } 
     catch (error) {
         res.status(401).send({"error":error}); 
