@@ -7,11 +7,11 @@ const cors= require("cors");
 const {BlacklistModel} = require("./Model/blaklist.model")
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use("/users", userRouter);
 app.use("/posts",postRouter);
-app.use(cors());
+
 
 app.get("/",(req,res)=>{
     res.status(200).send({"msg":"Welcome to my website"});
